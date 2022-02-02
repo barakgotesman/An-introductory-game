@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-    <CardQuestion @click="test" />
-    <p @click="test">test</p>
+    <CardQuestion @click="test()" />
+    <p @click="test">{{ myCards }}</p>
   </div>
 </template>
 
@@ -16,10 +16,13 @@ export default {
   },
   setup(){
     const name= 'App',
+    const myCards = ref([]),
+    const myCardsViewd = [],
     function test() {
-      console.log('test');
+      console.log('test',myCards);
+      myCards.push("test");
     }
-    return {name, test}
+    return {name,myCards,myCardsViewd, test}
   }
 };
 </script>
