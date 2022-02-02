@@ -1,19 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="https://vuejs.org/images/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
+    <CardQuestion @click="test" />
+    <p @click="test">test</p>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//import HelloWorld from './components/HelloWorld.vue';
+import CardQuestion from './components/CardQuestion.vue';
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    CardQuestion
+  },
+  setup(){
+    const name= 'App',
+    function test() {
+      console.log('test');
+    }
+    return {name, test}
   }
-}
+};
 </script>
 
 <style>
